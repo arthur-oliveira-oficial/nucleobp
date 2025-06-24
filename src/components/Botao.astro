@@ -1,0 +1,58 @@
+---
+// Componente reutilizável para botões do site
+interface Props {
+  texto: string;
+  href: string;
+  variante?: "primario" | "secundario" | "outline";
+  tamanho?: "pequeno" | "medio" | "grande";
+  completo?: boolean;
+  icone?: string;
+  classeExtra?: string;
+  novaAba?: boolean;
+}
+
+const {
+  texto,
+  href,
+  variante = "primario",
+  tamanho = "medio",
+  completo = false,
+  icone,
+  classeExtra = "",
+  novaAba = false,
+} = Astro.props;
+
+// Classes de tamanho
+const tamanhoClasses = {
+  pequeno: "py-1.5 px-3 text-sm",
+  medio: "py-2.5 px-5 text-base",
+  grande: "py-3 px-6 text-lg",
+};
+
+// Classes de variante
+const varianteClasses = {
+  primario: "bg-secundaria hover:bg-secundaria/90 text-primaria font-medium",
+  secundario: "bg-primaria hover:bg-primaria/90 text-white font-medium",
+  outline: "bg-transparent hover:bg-secundaria/10 text-primaria border border-secundaria font-medium",
+};
+
+// Classes CSS do botão
+const classes = `
+  inline-flex items-center justify-center
+  rounded-md transition-colors
+  ${varianteClasses[variante]}
+  ${tamanhoClasses[tamanho]}
+  ${completo ? "w-full" : ""}
+  ${classeExtra}
+`;
+---
+
+<a
+  href={href}
+  class={classes}
+  target={novaAba ? "_blank" : undefined}
+  rel={novaAba ? "noopener noreferrer" : undefined}
+>
+  {icone && <span class="mr-2" set:html={icone} />}
+  {texto}
+</a>

@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Botao from '../components/Botao.astro';
+
+const titulo = "Contato | Núcleo BP";
+const descricao = "Entre em contato com a Núcleo BP para agendar sua avaliação médica com o Dr. David Brito Pereira.";
+---
+
+<Layout titulo={titulo} descricao={descricao}>
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold text-primaria mb-6 text-center">Entre em Contato</h1>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center">
+        Entre em contato para agendar sua avaliação médica ou esclarecer dúvidas sobre nossos tratamentos e serviços.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <!-- Formulário de Contato -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold text-primaria mb-6">Agende sua Avaliação</h2>
+          <form id="formulario-contato" class="space-y-6">
+            <div>
+              <label for="nome" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secundaria focus:border-transparent"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secundaria focus:border-transparent"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="telefone" class="block text-sm font-medium text-gray-700 mb-1">Telefone / WhatsApp</label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secundaria focus:border-transparent"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="servico" class="block text-sm font-medium text-gray-700 mb-1">Serviço de Interesse</label>
+              <select
+                id="servico"
+                name="servico"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secundaria focus:border-transparent"
+                required
+              >
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="Mounjaro">Protocolo Mounjaro</option>
+                <option value="Morosil">Tratamento com Morosil</option>
+                <option value="Curcumina">Protocolo de Curcumina</option>
+                <option value="Terapia IV">Terapia de Nutrientes IV</option>
+                <option value="Hipertrofia">Protocolo de Hipertrofia</option>
+                <option value="Outro">Outro / Avaliação Geral</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="mensagem" class="block text-sm font-medium text-gray-700 mb-1">Mensagem (opcional)</label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secundaria focus:border-transparent"
+              ></textarea>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                class="w-full bg-secundaria hover:bg-secundaria/90 text-primaria font-medium py-3 px-6 rounded-md transition-colors"
+              >
+                Enviar Solicitação de Agendamento
+              </button>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-4">
+              Ao enviar este formulário, você concorda com nossa <a href="/termos-uso" class="underline hover:text-primaria">Política de Privacidade</a>.
+            </p>
+          </form>
+        </div>
+
+        <!-- Informações de Contato -->
+        <div>
+          <h2 class="text-xl font-semibold text-primaria mb-6">Informações de Contato</h2>
+
+          <!-- WhatsApp -->
+          <div class="flex items-start mb-8">
+            <div class="bg-green-500 text-white p-3 rounded-full mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">WhatsApp</h3>
+              <p class="text-gray-600 mb-1">Resposta rápida em horário comercial</p>
+              <a href="https://wa.me/5595991353506" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-primaria hover:text-secundaria transition-colors">
+                (95) 99135-3506
+              </a>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start mb-8">
+            <div class="bg-primaria text-white p-3 rounded-full mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Email</h3>
+              <p class="text-gray-600 mb-1">Respostas em até 24 horas</p>
+              <a href="mailto:contato@nucleobp.com.br" class="text-lg font-medium text-primaria hover:text-secundaria transition-colors">
+                contato@nucleobp.com.br
+              </a>
+            </div>
+          </div>
+
+          <!-- Endereço -->
+          <div class="flex items-start mb-8">
+            <div class="bg-primaria text-white p-3 rounded-full mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Endereço</h3>
+              <p class="text-gray-600 mb-1">Consultas presenciais</p>
+              <address class="not-italic text-lg font-medium text-primaria">
+                Av. Principal, 123<br />
+                Centro, Boa Vista - RR
+              </address>
+            </div>
+          </div>
+
+          <!-- Horário de Funcionamento -->
+          <div class="flex items-start">
+            <div class="bg-primaria text-white p-3 rounded-full mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Horário de Atendimento</h3>
+              <p class="text-gray-600 mb-1">Agendamento prévio</p>
+              <div class="text-lg font-medium text-primaria">
+                <p>Segunda a Sexta: 8h às 18h</p>
+                <p>Sábado: 8h às 12h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Maps (placeholder) -->
+  <section class="pb-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto bg-gray-200 rounded-lg overflow-hidden h-80 flex items-center justify-center">
+        <div class="text-center">
+          <p class="text-gray-600 mb-4">Mapa da localização da clínica será exibido aqui</p>
+          <p class="text-sm text-gray-500">(Google Maps será integrado na implementação final)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Script para manipular o envio do formulário
+  document.addEventListener('DOMContentLoaded', () => {
+    const formulario = document.getElementById('formulario-contato');
+      formulario?.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Aqui você implementaria a lógica de envio do formulário
+      // Por exemplo, enviar dados para um endpoint de API
+
+      // Simulação de envio bem-sucedido
+      alert('Sua solicitação foi enviada com sucesso! Entraremos em contato em breve.');
+      (e.target as HTMLFormElement).reset();
+    });
+  });
+</script>

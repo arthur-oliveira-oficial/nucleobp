@@ -1,0 +1,267 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Botao from '../../components/Botao.astro';
+
+const titulo = "Mounjaro | Núcleo BP";
+const descricao = "Protocolo de emagrecimento com Mounjaro (tirzepatida) com preservação muscular, supervisionado pelo Dr. David Brito Pereira.";
+
+// Perguntas frequentes sobre Mounjaro
+const perguntas = [
+  {
+    pergunta: "Como é a aplicação do Mounjaro?",
+    resposta: "O Mounjaro é administrado através de uma injeção subcutânea semanal, autoaplicável no abdômen, coxa ou braço. Antes de iniciar o tratamento, você receberá orientação completa do Dr. David Brito Pereira sobre como realizar a aplicação corretamente."
+  },
+  {
+    pergunta: "Preciso de receita médica para adquirir o Mounjaro?",
+    resposta: "Sim, o Mounjaro é um medicamento de prescrição obrigatória. Seu uso deve ser iniciado e continuamente acompanhado por um médico, como parte de um protocolo terapêutico individualizado."
+  },
+  {
+    pergunta: "Quais são os principais efeitos colaterais?",
+    resposta: "Os efeitos colaterais mais comuns podem incluir náusea, diarreia, vômito, constipação, dor abdominal e reações no local da injeção. A maioria desses efeitos é de intensidade leve a moderada e tende a diminuir com o tempo. Na Núcleo BP, monitoramos cuidadosamente esses efeitos e implementamos estratégias para minimizá-los."
+  },
+  {
+    pergunta: "Em quanto tempo começarei a ver resultados?",
+    resposta: "Embora a resposta varie individualmente, muitos pacientes começam a observar perda de peso já nas primeiras semanas de tratamento. Resultados mais significativos geralmente são notados a partir de 4-8 semanas, quando seguido o protocolo completo com orientação nutricional e atividade física."
+  },
+  {
+    pergunta: "O tratamento pode causar perda de massa muscular?",
+    resposta: "Sim, essa é uma preocupação válida com qualquer medicamento para perda de peso significativa. No entanto, na Núcleo BP desenvolvemos um protocolo específico para preservação muscular que inclui orientação nutricional com ênfase em proteínas, plano de atividade física resistida e, quando apropriado, suplementação estratégica. Este protocolo integrado minimiza significativamente a perda muscular durante o tratamento."
+  },
+  {
+    pergunta: "Por quanto tempo devo usar o Mounjaro?",
+    resposta: "A duração do tratamento é individualizada e determinada pelo Dr. David Brito Pereira com base nos seus objetivos, resposta ao medicamento e perfil geral de saúde. Tipicamente, varia de 3 a 12 meses, com avaliações regulares para ajustes de dose e estratégia terapêutica."
+  }
+];
+---
+
+<Layout titulo={titulo} descricao={descricao}>
+  <!-- Hero da página -->
+  <section class="bg-primaria text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          Mounjaro: Potencializando o Emagrecimento com Segurança e Preservação Muscular
+        </h1>
+        <p class="text-lg text-gray-200">
+          Um protocolo de emagrecimento avançado e supervisionado pelo Dr. David Brito Pereira (CRM-RR 2745)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O que é Mounjaro e Como Funciona -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-primaria mb-6">O que é Mounjaro e Como Funciona?</h2>
+
+        <div class="prose max-w-none text-gray-700">
+          <p class="mb-4">
+            <strong>Mounjaro</strong> (princípio ativo: tirzepatida) é um medicamento injetável semanal revolucionário no campo do emagrecimento médico assistido. Diferentemente de outros medicamentos, ele atua como um agonista duplo dos receptores GIP e GLP-1, oferecendo um mecanismo de ação diferenciado e potente.
+          </p>
+
+          <p class="mb-4">
+            Este duplo mecanismo permite que o Mounjaro atue de forma mais completa no controle do peso através de múltiplas vias:
+          </p>
+
+          <ul class="list-disc pl-6 mb-4">
+            <li>Reduz o apetite e aumenta a sensação de saciedade</li>
+            <li>Diminui a velocidade do esvaziamento gástrico, prolongando a sensação de plenitude</li>
+            <li>Melhora a sensibilidade à insulina</li>
+            <li>Ajuda a regular o metabolismo de gorduras</li>
+          </ul>
+
+          <p>
+            Os estudos clínicos demonstram resultados impressionantes, com perdas de peso na ordem de 15% a mais de 20% do peso corporal total em aproximadamente 72 semanas de tratamento contínuo, superando outras opções farmacológicas disponíveis atualmente.
+          </p>
+        </div>
+
+        <div class="mt-8 mb-12 bg-gray-50 p-6 rounded-lg border-l-4 border-secundaria">
+          <h3 class="text-lg font-semibold text-primaria mb-3">Resultados comprovados cientificamente</h3>
+          <p class="text-gray-700">
+            Estudos clínicos de fase 3 demonstraram que pacientes tratados com Mounjaro por 72 semanas alcançaram uma redução média de 22,5% do peso corporal inicial na dose mais alta, em comparação com 2,4% no grupo placebo. Isto representa um dos resultados mais expressivos já documentados para um medicamento de emagrecimento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O Desafio da Massa Muscular -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-primaria mb-6">O Desafio da Massa Muscular: Nossa Abordagem Ética e Eficaz</h2>
+
+        <div class="prose max-w-none text-gray-700">
+          <p class="mb-4">
+            Uma preocupação legítima com qualquer protocolo de emagrecimento rápido e significativo é a preservação da massa muscular. Essa questão, muitas vezes negligenciada por outras clínicas, é tratada como prioridade na Núcleo BP.
+          </p>
+
+          <p class="mb-4">
+            <strong>Por que isso importa?</strong> A massa muscular é metabolicamente ativa e essencial para a saúde a longo prazo. Sua preservação durante o emagrecimento é fundamental para:
+          </p>
+
+          <ul class="list-disc pl-6 mb-4">
+            <li>Manter um metabolismo saudável após o término do tratamento</li>
+            <li>Prevenir o efeito "sanfona" comum em dietas restritivas</li>
+            <li>Preservar a força e funcionalidade corporal</li>
+            <li>Garantir resultados esteticamente superiores</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-primaria mt-8 mb-3">O Protocolo de Preservação Muscular da Núcleo BP</h3>
+
+          <p class="mb-4">
+            Nosso protocolo integrado para proteção muscular durante o tratamento com Mounjaro inclui:
+          </p>
+
+          <ol class="list-decimal pl-6 mb-4">
+            <li>
+              <strong>Avaliação da Composição Corporal:</strong> Utilizamos métodos precisos para medir sua massa muscular antes e durante o tratamento, permitindo ajustes personalizados.
+            </li>
+            <li>
+              <strong>Nutrição Estratégica:</strong> Plano alimentar com adequação proteica individualizada, distribuição inteligente de macronutrientes e timing nutricional otimizado.
+            </li>
+            <li>
+              <strong>Treinamento Resistido:</strong> Programa de exercícios específicos para estimular a manutenção ou mesmo o desenvolvimento muscular durante a fase de perda de peso.
+            </li>
+            <li>
+              <strong>Suplementação Direcionada:</strong> Quando apropriado, utilizamos suplementos com evidência científica para suporte à preservação muscular.
+            </li>
+            <li>
+              <strong>Monitoramento Contínuo:</strong> Reavaliações periódicas para ajustes de protocolo conforme sua resposta individual.
+            </li>
+          </ol>
+        </div>
+
+        <div class="mt-8 bg-primaria/5 p-6 rounded-lg border-l-4 border-primaria">
+          <h3 class="text-lg font-semibold text-primaria mb-2">Compromisso com a Transparência</h3>
+          <p class="text-gray-700">
+            Na Núcleo BP, abordamos abertamente os desafios do tratamento. Reconhecemos que a perda muscular é um risco real, mas também sabemos que pode ser efetivamente gerenciada com o protocolo correto. Não prometemos milagres, mas sim um acompanhamento médico sério que maximiza benefícios e minimiza riscos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para Quem o Tratamento é Indicado -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-primaria mb-6">Para Quem o Tratamento com Mounjaro é Indicado?</h2>
+
+        <div class="prose max-w-none text-gray-700">
+          <p class="mb-6">
+            O tratamento com Mounjaro na Núcleo BP é indicado para adultos que se enquadram nos seguintes critérios:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h3 class="text-lg font-semibold text-primaria mb-3">Indicações Primárias</h3>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Pessoas com IMC ≥ 30 (obesidade)</li>
+                <li>Pessoas com IMC ≥ 27 (sobrepeso) associado a pelo menos uma complicação relacionada ao peso</li>
+                <li>Pacientes com diabetes tipo 2 que precisam de melhor controle glicêmico</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h3 class="text-lg font-semibold text-primaria mb-3">É Especialmente Benéfico Para</h3>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Pessoas que não obtiveram sucesso com dieta e exercícios isoladamente</li>
+                <li>Pacientes com resistência à insulina ou diabetes tipo 2</li>
+                <li>Indivíduos com histórico de recuperação de peso após dietas</li>
+                <li>Pessoas com dificuldade de controle do apetite</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="mb-4">
+            É importante ressaltar que o Mounjaro (princípio ativo tirzepatida) já é aprovado para tratamento de obesidade sob o nome comercial Zepbound, e representa uma das opções mais avançadas disponíveis atualmente para manejo médico do peso.
+          </p>
+
+          <div class="bg-red-50 p-5 rounded-lg border-l-4 border-red-400 mt-8">
+            <h3 class="text-lg font-semibold text-red-700 mb-2">Contraindicações</h3>
+            <p class="mb-3 text-gray-700">
+              O tratamento não é recomendado para:
+            </p>
+            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+              <li>Gestantes ou mulheres que planejam engravidar</li>
+              <li>Pessoas em amamentação</li>
+              <li>Indivíduos com histórico pessoal ou familiar de carcinoma medular de tireoide ou síndrome endócrina múltipla tipo 2</li>
+              <li>Pacientes com pancreatite aguda ou crônica</li>
+              <li>Pessoas com hipersensibilidade conhecida à tirzepatida ou a qualquer componente da fórmula</li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <p class="italic text-gray-600">
+              Importante: A decisão sobre a adequação do tratamento sempre será feita após avaliação médica completa com o Dr. David Brito Pereira, considerando seu histórico médico, objetivos individuais e perfil de saúde.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ - Perguntas Frequentes -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-primaria mb-6">Perguntas Frequentes</h2>
+
+        <div class="space-y-4">
+          {perguntas.map((item, index) => (
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+              <details class="group">
+                <summary class="flex cursor-pointer items-center justify-between p-4 font-medium">
+                  <span class="text-primaria">{item.pergunta}</span>
+                  <span class="transition group-open:rotate-180">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-secundaria">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="p-4 pt-0 text-gray-700">
+                  <p>{item.resposta}</p>
+                </div>
+              </details>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-primaria text-white">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">
+          Agende sua Avaliação para o Protocolo Mounjaro Responsável
+        </h2>
+        <p class="text-lg mb-8 text-gray-200">
+          Dê o primeiro passo para uma transformação segura e eficaz. Agende uma consulta com o Dr. David Brito Pereira e descubra se o protocolo Mounjaro é adequado para você.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <Botao
+            texto="Agendar Avaliação"
+            href="/contato"
+            variante="primario"
+            tamanho="grande"
+          />
+          <a
+            href="https://wa.me/5595991353506"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center py-3 px-6 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            Fale pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

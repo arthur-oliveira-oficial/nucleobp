@@ -1,11 +1,282 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Botao from '../components/Botao.astro';
+import CardServico from '../components/CardServico.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Dados dos serviços em destaque
+const servicosDestaque = [
+  {
+    titulo: "Mounjaro",
+    descricao: "Emagrecimento potente com proteção muscular, resultado de um protocolo científico supervisionado.",
+    imagem: "/servicos/mounjaro.jpg",
+    alt: "Protocolo Mounjaro para emagrecimento seguro",
+    link: "/servicos/mounjaro"
+  },
+  {
+    titulo: "Curcumina",
+    descricao: "Poder anti-inflamatório e antioxidante para otimização de resultados e recuperação acelerada.",
+    imagem: "/servicos/curcumina.jpg",
+    alt: "Tratamento com Curcumina",
+    link: "/servicos/curcumina"
+  },
+  {
+    titulo: "Morosil®",
+    descricao: "Protocolo natural para redução estratégica de medidas e gordura abdominal localizada.",
+    imagem: "/servicos/morosil.jpg",
+    alt: "Tratamento com Morosil para redução de gordura abdominal",
+    link: "/servicos/morosil"
+  },
+  {
+    titulo: "Terapia IV",
+    descricao: "Nutrientes intravenosos para reposição rápida, recuperação e performance otimizada.",
+    imagem: "/servicos/terapia-iv.jpg",
+    alt: "Terapia IV de nutrientes para recuperação e performance",
+    link: "/servicos/terapia-vitaminas-intravenosa"
+  }
+];
+
+// Passos da jornada
+const passosJornada = [
+  {
+    numero: "1",
+    titulo: "Avaliação Médica Completa",
+    descricao: "Primeiro, realizamos um diagnóstico personalizado com exames clínicos e análises detalhadas da sua saúde atual."
+  },
+  {
+    numero: "2",
+    titulo: "Protocolo Personalizado",
+    descricao: "Desenvolvemos um plano de tratamento exclusivo baseado nas suas necessidades, objetivos e condições de saúde."
+  },
+  {
+    numero: "3",
+    titulo: "Acompanhamento e Ajustes",
+    descricao: "Monitoramos sua evolução constantemente e realizamos ajustes precisos para maximizar seus resultados de forma segura."
+  }
+];
+
+// Ícones dos pilares usando SVG inline
+const icones = {
+  emagrecimento: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" />
+  </svg>`,
+  hipertrofia: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+  </svg>`,
+  bemestar: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+  </svg>`
+};
 ---
 
 <Layout>
-	<Welcome />
+  <!-- Seção Hero -->
+  <section class="bg-primaria text-white">
+    <div class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+          Resultados que Você Vê. <span class="text-secundaria">Responsabilidade</span> que Você Sente.
+        </h1>
+        <p class="text-lg md:text-xl mb-8 text-gray-200">
+          Transforme seu corpo e sua saúde com protocolos médicos baseados em ciência, ética e acompanhamento personalizado.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <Botao
+            texto="Conheça Nossos Protocolos"
+            href="/servicos"
+            variante="primario"
+            tamanho="grande"
+          />
+          <Botao
+            texto="Agende sua Consulta"
+            href="/contato"
+            variante="outline"
+            tamanho="grande"
+            classeExtra="bg-transparent border-2 border-secundaria text-secundaria hover:bg-secundaria/10"
+          />
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center md:justify-end">
+        <img
+          src="/hero-image.jpg"
+          alt="Núcleo BP - Cuidados médicos personalizados"
+          class="rounded-lg shadow-xl max-w-full h-auto object-cover"
+          width="600"
+          height="400"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Nossos Pilares -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primaria mb-12">Nossos Pilares</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pilar 1: Emagrecimento Científico -->
+        <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow">
+          <div class="text-primaria mb-4 flex justify-center">
+            <span set:html={icones.emagrecimento} />
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-primaria">Emagrecimento Científico</h3>
+          <p class="text-gray-600">
+            Protocolos médicos de emagrecimento focados em resultados sustentáveis e preservação da saúde metabólica e muscular.
+          </p>
+          <Botao
+            texto="Saiba mais"
+            href="/servicos#emagrecimento"
+            variante="outline"
+            tamanho="pequeno"
+            classeExtra="mt-4"
+          />
+        </div>
+
+        <!-- Pilar 2: Hipertrofia e Ganho de Massa -->
+        <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow">
+          <div class="text-primaria mb-4 flex justify-center">
+            <span set:html={icones.hipertrofia} />
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-primaria">Hipertrofia e Ganho de Massa</h3>
+          <p class="text-gray-600">
+            Suporte médico especializado para maximizar seus resultados de treinamento com protocolos seguros e eficazes.
+          </p>
+          <Botao
+            texto="Saiba mais"
+            href="/servicos#hipertrofia"
+            variante="outline"
+            tamanho="pequeno"
+            classeExtra="mt-4"
+          />
+        </div>
+
+        <!-- Pilar 3: Performance e Bem-Estar -->
+        <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow">
+          <div class="text-primaria mb-4 flex justify-center">
+            <span set:html={icones.bemestar} />
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-primaria">Performance e Bem-Estar</h3>
+          <p class="text-gray-600">
+            Otimização da saúde global, energia e desempenho físico e mental através de intervenções médicas personalizadas.
+          </p>
+          <Botao
+            texto="Saiba mais"
+            href="/servicos#performance"
+            variante="outline"
+            tamanho="pequeno"
+            classeExtra="mt-4"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Cuidado com Responsabilidade e Ética -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/3 mb-8 md:mb-0">
+          <img
+            src="/dr-david.jpg"
+            alt="Dr. David Brito Pereira"
+            class="rounded-lg shadow-lg w-full h-auto max-w-md mx-auto"
+          />
+        </div>
+        <div class="md:w-2/3">
+          <h2 class="text-3xl font-bold text-primaria mb-6">Cuidado com Responsabilidade e Ética</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Na Núcleo BP, nosso compromisso vai muito além de oferecer tratamentos estéticos ou de performance. Estabelecemos uma verdadeira parceria de saúde com cada paciente, fundamentada em dois valores inegociáveis: <span class="font-semibold text-primaria">responsabilidade e ética</span>.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            Acreditamos na transparência total sobre benefícios e potenciais riscos de cada intervenção. Nossos protocolos são baseados em evidências científicas sólidas e acompanhados de perto para garantir não apenas resultados visíveis, mas principalmente a preservação da sua saúde a longo prazo.
+          </p>
+          <div class="flex items-center">
+            <p class="italic text-primaria font-medium">
+              "Comprometo-me pessoalmente com seu bem-estar e resultados seguros."
+            </p>
+            <div class="ml-4 flex items-center">
+              <span class="text-lg font-semibold text-primaria">Dr. David Brito Pereira</span>
+              <span class="text-sm text-gray-500 ml-2">CRM-RR 2745</span>
+            </div>
+          </div>
+          <Botao
+            texto="Saiba mais sobre nossa filosofia"
+            href="/sobre-nos"
+            variante="secundario"
+            tamanho="medio"
+            classeExtra="mt-6"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Protocolos em Destaque -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primaria mb-4">Protocolos em Destaque</h2>
+      <p class="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        Conheça nossos principais tratamentos, desenvolvidos com base em evidências científicas e aplicados com rigoroso acompanhamento médico.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {servicosDestaque.map(servico => (
+          <CardServico
+            titulo={servico.titulo}
+            descricao={servico.descricao}
+            imagem={servico.imagem}
+            alt={servico.alt}
+            link={servico.link}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Como Funciona / Jornada -->
+  <section class="py-16 bg-primaria text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4">Como Funciona a Sua Jornada na Núcleo BP</h2>
+      <p class="text-lg text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+        Um processo estruturado e personalizado para garantir os melhores resultados com segurança e acompanhamento constante.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {passosJornada.map((passo, index) => (
+          <div class="relative bg-primaria/50 p-8 rounded-lg border border-secundaria/30 backdrop-blur-sm">
+            <div class="absolute -top-6 -left-6 bg-secundaria text-primaria w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
+              {passo.numero}
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-secundaria mt-4">{passo.titulo}</h3>
+            <p class="text-gray-300">{passo.descricao}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-bold text-primaria mb-6">Pronto para iniciar sua transformação com segurança?</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Entre em contato agora mesmo e agende sua avaliação médica completa com o Dr. David Brito Pereira.
+      </p>
+      <div class="flex flex-col items-center sm:flex-row justify-center gap-6">
+        <a href="tel:+5595991353506" class="flex items-center text-xl font-medium text-primaria hover:text-secundaria transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          (95) 99135-3506
+        </a>        <Botao
+          texto="Agende sua Avaliação"
+          href="/contato"
+          variante="primario"
+          tamanho="grande"
+          icone={`<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>`}
+        />
+      </div>
+    </div>
+  </section>
 </Layout>

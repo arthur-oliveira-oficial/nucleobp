@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Botao from '../components/Botao.astro';
+
+const titulo = "Sobre Nós | Núcleo BP";
+const descricao = "Conheça a Núcleo BP, nossa missão, valores e o Dr. David Brito Pereira, especialista em emagrecimento e otimização de performance física.";
+
+// Valores da clínica
+const valores = [
+  {
+    titulo: "Responsabilidade",
+    descricao: "Assumimos total responsabilidade pelo bem-estar dos nossos pacientes, oferecendo protocolos personalizados e acompanhamento contínuo."
+  },
+  {
+    titulo: "Ética",
+    descricao: "Praticamos medicina baseada em evidências, com transparência sobre benefícios e riscos, e comprometimento com os mais altos padrões éticos."
+  },
+  {
+    titulo: "Excelência",
+    descricao: "Buscamos constantemente os melhores resultados através de protocolos inovadores, tecnologias avançadas e educação médica continuada."
+  },
+  {
+    titulo: "Personalização",
+    descricao: "Reconhecemos a singularidade de cada paciente, desenvolvendo abordagens individualizadas que respeitam seu histórico, necessidades e objetivos."
+  }
+];
+
+// Diferenciais da clínica
+const diferenciais = [
+  {
+    icone: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>`,
+    titulo: "Protocolos Baseados em Evidências",
+    descricao: "Todos os nossos tratamentos são fundamentados em pesquisas científicas atualizadas e comprovadas."
+  },
+  {
+    icone: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+    </svg>`,
+    titulo: "Atendimento Médico Personalizado",
+    descricao: "Cada paciente recebe atenção individualizada e um plano de tratamento sob medida para suas necessidades."
+  },
+  {
+    icone: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>`,
+    titulo: "Tecnologia Avançada",
+    descricao: "Utilizamos os recursos mais modernos para avaliação, diagnóstico e acompanhamento dos resultados."
+  },
+  {
+    icone: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`,
+    titulo: "Acompanhamento Contínuo",
+    descricao: "Monitoramos sua evolução de perto, com ajustes constantes para garantir os melhores resultados."
+  }
+];
+---
+
+<Layout titulo={titulo} descricao={descricao}>
+  <!-- Hero da página -->
+  <section class="bg-primaria text-white py-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">Sobre a Núcleo BP</h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto text-center text-gray-200">
+        Nossa missão é transformar vidas através da medicina personalizada,
+        fundamentada em ciência, ética e um compromisso inabalável com a saúde e o bem-estar.
+      </p>
+    </div>
+  </section>
+
+  <!-- Nossa História e Missão -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <img
+            src="/clinica.jpg"
+            alt="Clínica Núcleo BP"
+            class="rounded-lg shadow-lg w-full h-auto"
+          />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-primaria mb-6">Nossa História e Missão</h2>
+          <p class="text-gray-700 mb-4">
+            A Núcleo BP nasceu da visão do Dr. David Brito Pereira de criar um espaço onde a medicina moderna, baseada em evidências científicas, pudesse ser praticada com um olhar humanizado e ético, focado nas necessidades individuais de cada paciente.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Depois de anos de experiência clínica e observando os desafios que seus pacientes enfrentavam, especialmente nas áreas de emagrecimento e otimização da performance física, o Dr. David identificou a necessidade de uma abordagem mais personalizada e responsável, que fosse além das promessas superficiais comuns no mercado.
+          </p>
+          <p class="text-gray-700">
+            Nossa missão é oferecer protocolos médicos avançados para emagrecimento, hipertrofia e bem-estar, sempre conduzidos com responsabilidade, transparência e um compromisso inabalável com a saúde a longo prazo de nossos pacientes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O Responsável Técnico -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+        <div class="md:w-1/2">
+          <img
+            src="/dr-david.jpg"
+            alt="Dr. David Brito Pereira"
+            class="rounded-lg shadow-lg w-full h-auto"
+          />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-primaria mb-6">Dr. David Brito Pereira</h2>
+          <p class="text-lg font-semibold text-gray-600 mb-4">CRM-RR 2745 | Responsável Técnico</p>
+
+          <p class="text-gray-700 mb-4">
+            Dr. David Brito Pereira é médico formado pela Universidade Federal de Roraima, com especialização em Medicina Esportiva e Nutrologia. Sua trajetória profissional é marcada pela busca constante por conhecimento e excelência no atendimento médico.
+          </p>
+
+          <p class="text-gray-700 mb-4">
+            Ao longo de sua carreira, tem se dedicado especialmente ao estudo dos mecanismos fisiológicos do emagrecimento, da hipertrofia muscular e da otimização da performance física, sempre com foco na individualidade de cada paciente.
+          </p>
+
+          <p class="text-gray-700 mb-4">
+            Dr. David é reconhecido por sua abordagem ética e transparente, e por sua capacidade de construir relações de confiança com seus pacientes, oferecendo não apenas tratamentos eficazes, mas também educação e acompanhamento personalizados.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mt-6">
+            <Botao
+              texto="Agende uma Consulta"
+              href="/contato"
+              variante="primario"
+              tamanho="medio"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossos Valores -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-primaria mb-4 text-center">Nossos Valores</h2>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center">
+        Princípios que guiam cada decisão e cada atendimento na Núcleo BP
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {valores.map(valor => (
+          <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-secundaria">
+            <h3 class="text-xl font-semibold text-primaria mb-3">{valor.titulo}</h3>
+            <p class="text-gray-700">{valor.descricao}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossos Diferenciais -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-primaria mb-4 text-center">Nossos Diferenciais</h2>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center">
+        O que torna a abordagem da Núcleo BP única no mercado
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {diferenciais.map(diferencial => (
+          <div class="flex bg-white p-6 rounded-lg shadow-sm">
+            <div class="text-secundaria flex-shrink-0 mr-4">
+              <span set:html={diferencial.icone} />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-primaria mb-2">{diferencial.titulo}</h3>
+              <p class="text-gray-700">{diferencial.descricao}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-primaria text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Conheça Nossa Abordagem</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        Venha conhecer pessoalmente como nossos valores se traduzem em resultados reais para nossos pacientes. Agende sua avaliação e descubra a diferença da medicina praticada com responsabilidade e ética.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <Botao
+          texto="Agendar Avaliação"
+          href="/contato"
+          variante="primario"
+          tamanho="grande"
+        />
+        <Botao
+          texto="Conheça Nossos Serviços"
+          href="/servicos"
+          variante="outline"
+          tamanho="grande"
+          classeExtra="bg-transparent border-2 border-secundaria text-secundaria hover:bg-secundaria/10"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

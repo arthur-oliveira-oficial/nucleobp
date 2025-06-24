@@ -1,0 +1,155 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Botao from '../../components/Botao.astro';
+import CardServico from '../../components/CardServico.astro';
+
+const titulo = "Nossos Serviços | Núcleo BP";
+const descricao = "Conheça os tratamentos e protocolos médicos oferecidos pela Núcleo BP para emagrecimento, ganho de massa muscular e bem-estar.";
+
+// Serviços de Emagrecimento
+const servicosEmagrecimento = [
+  {
+    titulo: "Mounjaro",
+    descricao: "Emagrecimento potente com proteção muscular através de um protocolo supervisionado pelo Dr. David Brito Pereira.",
+    imagem: "/servicos/mounjaro.jpg",
+    alt: "Tratamento com Mounjaro",
+    link: "/servicos/mounjaro"
+  },
+  {
+    titulo: "Morosil®",
+    descricao: "Protocolo natural baseado em evidências científicas para redução estratégica de medidas e gordura abdominal localizada.",
+    imagem: "/servicos/morosil.jpg",
+    alt: "Tratamento com Morosil",
+    link: "/servicos/morosil"
+  }
+];
+
+// Serviços de Hipertrofia
+const servicosHipertrofia = [
+  {
+    titulo: "Protocolo de Hipertrofia",
+    descricao: "Maximização dos resultados de treinamento com acompanhamento médico personalizado para ganho de massa muscular.",
+    imagem: "/servicos/hipertrofia.jpg",
+    alt: "Protocolo de hipertrofia muscular",
+    link: "/servicos/protocolo-hipertrofia"
+  }
+];
+
+// Serviços de Performance e Bem-Estar
+const servicosPerformance = [
+  {
+    titulo: "Curcumina",
+    descricao: "Protocolo anti-inflamatório e antioxidante para otimização da recuperação e desempenho físico.",
+    imagem: "/servicos/curcumina.jpg",
+    alt: "Tratamento com Curcumina",
+    link: "/servicos/curcumina"
+  },
+  {
+    titulo: "Terapia de Nutrientes IV",
+    descricao: "Reposição intravenosa de nutrientes essenciais para recuperação acelerada e otimização da performance.",
+    imagem: "/servicos/terapia-iv.jpg",
+    alt: "Terapia intravenosa de nutrientes",
+    link: "/servicos/terapia-vitaminas-intravenosa"
+  }
+];
+---
+
+<Layout titulo={titulo} descricao={descricao}>
+  <!-- Hero da página Serviços -->
+  <section class="bg-primaria text-white py-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">Nossos Serviços</h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto text-center text-gray-200 mb-8">
+        Protocolos médicos baseados em ciência, aplicados com ética e responsabilidade para resultados seguros e eficazes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção Emagrecimento -->
+  <section id="emagrecimento" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-primaria mb-4">Emagrecimento Científico</h2>
+        <p class="text-lg text-gray-600 max-w-4xl">
+          Nossos protocolos de emagrecimento combinam as mais avançadas tecnologias e medicamentos com acompanhamento médico rigoroso, garantindo não apenas a perda de peso, mas principalmente a preservação da saúde metabólica e muscular durante todo o processo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {servicosEmagrecimento.map(servico => (
+          <CardServico
+            titulo={servico.titulo}
+            descricao={servico.descricao}
+            imagem={servico.imagem}
+            alt={servico.alt}
+            link={servico.link}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Hipertrofia -->
+  <section id="hipertrofia" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-primaria mb-4">Hipertrofia e Ganho de Massa</h2>
+        <p class="text-lg text-gray-600 max-w-4xl">
+          Potencialize seus resultados de treinamento com suporte médico especializado. Nossos protocolos para hipertrofia são desenvolvidos para maximizar o ganho de massa muscular de forma segura e sustentável, sempre com supervisão médica adequada.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {servicosHipertrofia.map(servico => (
+          <CardServico
+            titulo={servico.titulo}
+            descricao={servico.descricao}
+            imagem={servico.imagem}
+            alt={servico.alt}
+            link={servico.link}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Performance e Bem-Estar -->
+  <section id="performance" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-primaria mb-4">Performance e Bem-Estar</h2>
+        <p class="text-lg text-gray-600 max-w-4xl">
+          Vá além dos objetivos estéticos e otimize sua saúde global. Oferecemos protocolos específicos para melhorar seu bem-estar, energia, recuperação e desempenho físico e mental, sempre com foco na segurança e em resultados baseados em evidências.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {servicosPerformance.map(servico => (
+          <CardServico
+            titulo={servico.titulo}
+            descricao={servico.descricao}
+            imagem={servico.imagem}
+            alt={servico.alt}
+            link={servico.link}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA - Agende sua Avaliação -->
+  <section class="py-16 bg-primaria text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Agende sua Avaliação Personalizada</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        Cada corpo é único e merece um protocolo personalizado. Agende sua consulta com o Dr. David Brito Pereira e descubra o melhor caminho para seus objetivos de saúde.
+      </p>      <Botao
+        texto="Agendar Consulta"
+        href="/contato"
+        variante="primario"
+        tamanho="grande"
+        icone='<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>'
+      />
+    </div>
+  </section>
+</Layout>
