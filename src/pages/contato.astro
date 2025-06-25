@@ -143,8 +143,7 @@ const descricao = "Entre em contato com a Núcleo BP para agendar sua avaliaçã
               <h3 class="font-semibold text-gray-900">Endereço</h3>
               <p class="text-gray-600 mb-1">Consultas presenciais</p>
               <address class="not-italic text-lg font-medium text-primaria">
-                Av. Principal, 123<br />
-                Centro, Boa Vista - RR
+                Av. Ville Roy, 1784 - Caçari, Boa Vista - RR, 69307-725
               </address>
             </div>
           </div>
@@ -170,14 +169,20 @@ const descricao = "Entre em contato com a Núcleo BP para agendar sua avaliaçã
     </div>
   </section>
 
-  <!-- Google Maps (placeholder) -->
+  <!-- Google Maps (iframe real) -->
   <section class="pb-16">
     <div class="container mx-auto px-4">
       <div class="max-w-5xl mx-auto bg-gray-200 rounded-lg overflow-hidden h-80 flex items-center justify-center">
-        <div class="text-center">
-          <p class="text-gray-600 mb-4">Mapa da localização da clínica será exibido aqui</p>
-          <p class="text-sm text-gray-500">(Google Maps será integrado na implementação final)</p>
-        </div>
+        <iframe
+          title="Mapa da localização da clínica"
+          src="https://www.google.com/maps?q=Av.+Ville+Roy,+1784+-+Caçari,+Boa+Vista+-+RR,+69307-725&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0; min-height:320px; min-width:100%;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   </section>
