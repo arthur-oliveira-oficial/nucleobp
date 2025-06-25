@@ -1,0 +1,214 @@
+---
+// Componente para animação de múltiplos brasões se movendo na tela
+---
+
+<div class="logos-animadas-container">
+  <!-- Adicionamos várias instâncias do logo com diferentes animações -->
+  <div class="logo-brasao logo-1">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+  <div class="logo-brasao logo-2">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+  <div class="logo-brasao logo-3">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+  <div class="logo-brasao logo-4">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+  <div class="logo-brasao logo-5">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+  <div class="logo-brasao logo-6">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+  <div class="logo-brasao logo-7">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+  <div class="logo-brasao logo-8">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+  <div class="logo-brasao logo-9">
+    <img src="/logo_brasao.svg" alt="Brasão Núcleo BP" class="w-full h-full" />
+  </div>
+</div>
+
+<style>
+  .logos-animadas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none; /* Permite clicar através das logos */
+    z-index: 1;
+  }
+
+  .logo-brasao {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    opacity: 0.3;
+    filter: brightness(3); /* Para tornar o logo mais visível contra fundos escuros */
+    will-change: transform; /* Melhora a performance da animação */
+  }
+
+  /* Animações individuais para cada logo */
+  .logo-1 {
+    top: 10%;
+    left: 10%;
+    animation: moveAround1 30s linear infinite;
+  }
+
+  .logo-2 {
+    top: 70%;
+    left: 20%;
+    animation: moveAround2 45s linear infinite;
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-3 {
+    top: 40%;
+    left: 80%;
+    animation: moveAround3 38s linear infinite;
+    width: 90px;
+    height: 90px;
+  }
+
+  .logo-4 {
+    top: 80%;
+    left: 80%;
+    animation: moveAround4 42s linear infinite;
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-5 {
+    top: 20%;
+    left: 60%;
+    animation: moveAround5 36s linear infinite;
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo-6 {
+    top: 60%;
+    left: 40%;
+    animation: moveAround6 40s linear infinite;
+    width: 65px;
+    height: 65px;
+  }
+  .logo-7 {
+    top: 30%;
+    left: 35%;
+    animation: moveAround7 35s linear infinite;
+    width: 55px;
+    height: 55px;
+  }
+
+  .logo-8 {
+    top: 15%;
+    left: 85%;
+    animation: moveAround8 48s linear infinite;
+    width: 75px;
+    height: 75px;
+  }
+
+  .logo-9 {
+    top: 85%;
+    left: 50%;
+    animation: moveAround9 52s linear infinite;
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Trajetórias de movimento personalizadas para cada logo */
+  @keyframes moveAround1 {
+    0% { transform: translate(0, 0); }
+    15% { transform: translate(200px, 100px); }
+    30% { transform: translate(250px, -50px); }
+    45% { transform: translate(100px, -150px); }
+    60% { transform: translate(-100px, -100px); }
+    75% { transform: translate(-200px, 50px); }
+    90% { transform: translate(-100px, 150px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes moveAround2 {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-150px, -80px); }
+    40% { transform: translate(-250px, 100px); }
+    60% { transform: translate(0, 200px); }
+    80% { transform: translate(200px, 50px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes moveAround3 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-200px, -150px); }
+    50% { transform: translate(-300px, 80px); }
+    75% { transform: translate(-100px, 200px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes moveAround4 {
+    0% { transform: translate(0, 0); }
+    33% { transform: translate(150px, -200px); }
+    66% { transform: translate(-100px, -100px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes moveAround5 {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-120px, 150px); }
+    40% { transform: translate(0, 250px); }
+    60% { transform: translate(150px, 150px); }
+    80% { transform: translate(180px, -50px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes moveAround6 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(180px, 120px); }
+    50% { transform: translate(-50px, 200px); }
+    75% { transform: translate(-180px, 50px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes moveAround7 {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(120px, -80px); }
+    40% { transform: translate(220px, 50px); }
+    60% { transform: translate(100px, 180px); }
+    80% { transform: translate(-120px, 100px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes moveAround8 {
+    0% { transform: translate(0, 0); }
+    15% { transform: translate(-100px, 60px); }
+    30% { transform: translate(-180px, -40px); }
+    45% { transform: translate(-70px, -150px); }
+    60% { transform: translate(80px, -120px); }
+    75% { transform: translate(150px, -30px); }
+    90% { transform: translate(80px, 100px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes moveAround9 {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-120px, -100px); }
+    40% { transform: translate(-30px, -220px); }
+    60% { transform: translate(150px, -150px); }
+    80% { transform: translate(100px, -30px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  /* Estilo para animações suaves */
+  .logo-brasao {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
+  }
+</style>
