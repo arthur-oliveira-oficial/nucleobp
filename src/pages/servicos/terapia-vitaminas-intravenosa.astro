@@ -1,0 +1,251 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Botao from '../../components/Botao.astro';
+
+const titulo = "Terapia de Nutrientes Intravenosa: Reposição Rápida e Segura | Núcleo BP";
+const descricao = "Conheça nossa abordagem médica e ética para a Terapia de Nutrientes IV, focada na recuperação de atletas e correção de deficiências, sempre com supervisão profissional.";
+---
+
+<Layout titulo={titulo} descricao={descricao}>
+  <!-- Hero da página -->
+  <section class="bg-primaria text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          Terapia de Nutrientes Intravenosa: Reposição Rápida para Performance e Recuperação
+        </h1>
+        <p class="text-lg text-gray-200">
+          Abordagem científica, ética e personalizada para entregar nutrientes diretamente onde seu corpo mais precisa
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O que é a Terapia IV e suas vantagens -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-primaria mb-6">O que é a Terapia IV e Qual a sua Vantagem?</h2>
+
+        <div class="prose max-w-none text-gray-700">
+          <p class="mb-6">
+            A Terapia de Nutrientes Intravenosa (IV) consiste na administração direta de vitaminas, minerais, aminoácidos e outros nutrientes essenciais diretamente na corrente sanguínea, através de uma infusão controlada em ambiente médico. Diferentemente da suplementação oral tradicional, que precisa passar pelo sistema digestivo, a via intravenosa permite que os nutrientes sejam entregues imediatamente às células que deles necessitam.
+          </p>
+
+          <div class="bg-gray-50 p-6 rounded-lg mb-6">
+            <h3 class="text-xl font-semibold text-primaria mb-3">A Vantagem Principal: Biodisponibilidade Total</h3>
+            <p class="mb-3">
+              O grande diferencial da Terapia IV é a biodisponibilidade de 100% dos nutrientes administrados. Quando consumimos vitaminas e minerais por via oral, apenas uma fração desses nutrientes é efetivamente absorvida pelo organismo devido a diversos fatores:
+            </p>
+            <ul class="list-disc pl-6 mb-0">
+              <li class="mb-2">
+                <strong>Barreiras digestivas:</strong> pH estomacal, enzimas digestivas e a própria integridade da mucosa intestinal podem limitar a absorção.
+              </li>
+              <li class="mb-2">
+                <strong>Efeito de primeira passagem hepática:</strong> Muitos nutrientes são parcialmente metabolizados pelo fígado antes de chegarem à circulação sistêmica.
+              </li>
+              <li class="mb-2">
+                <strong>Competição por transportadores:</strong> Alguns nutrientes competem pelos mesmos mecanismos de absorção, limitando a biodisponibilidade quando administrados simultaneamente.
+              </li>
+              <li>
+                <strong>Velocidade de absorção:</strong> A absorção oral é gradual e pode levar horas, enquanto a via IV proporciona disponibilidade imediata.
+              </li>
+            </ul>
+          </div>
+
+          <p>
+            A administração intravenosa contorna elegantemente todas essas limitações, permitindo alcançar níveis sanguíneos terapêuticos de nutrientes que seriam impossíveis de atingir por via oral. Isso resulta em efeitos mais rápidos, potentes e direcionados, especialmente em situações que exigem uma intervenção nutricional imediata e eficaz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossas Aplicações -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-primaria mb-6">Nossas Aplicações: Foco na Ética e na Necessidade Médica</h2>
+
+        <div class="prose max-w-none text-gray-700">
+          <p class="mb-6">
+            Na Núcleo BP, nossa abordagem para a Terapia de Nutrientes IV é estritamente médica e baseada em evidências. Diferentemente de certas clínicas que oferecem "cocktails" padronizados sem fundamentação científica, cada protocolo que aplicamos é cuidadosamente formulado para atender às necessidades específicas do paciente, identificadas através de avaliação clínica e laboratorial criteriosa.
+          </p>
+
+          <p class="mb-6">
+            <strong>Nosso compromisso com a responsabilidade:</strong> A terapia IV só é indicada após uma avaliação completa que confirme sua real necessidade e benefício potencial para o paciente. Não preconizamos seu uso indiscriminado ou como substituto para hábitos saudáveis fundamentais como alimentação equilibrada, hidratação adequada e descanso suficiente.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <!-- Aplicação 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold text-primaria mb-3">Aceleração da Recuperação Muscular</h3>
+              <p>
+                Reposição estratégica de eletrólitos, aminoácidos e antioxidantes para reduzir o tempo de recuperação após treinamentos intensos, minimizando a dor muscular tardia e acelerando o reparo tecidual.
+              </p>
+            </div>
+
+            <!-- Aplicação 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold text-primaria mb-3">Otimização da Performance</h3>
+              <p>
+                Protocolos de hidratação e nutrição pré-competição para garantir níveis ideais de eletrólitos, glicose e aminoácidos essenciais, maximizando o desempenho atlético e a resistência física.
+              </p>
+            </div>
+
+            <!-- Aplicação 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold text-primaria mb-3">Correção de Deficiências Nutricionais</h3>
+              <p>
+                Reposição rápida e eficaz de nutrientes específicos identificados como deficientes em exames laboratoriais, especialmente vitaminas do complexo B, vitamina C, magnésio e zinco.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Segurança é Prioridade -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-primaria mb-6">Segurança é a Nossa Prioridade Máxima</h2>
+
+        <div class="prose max-w-none text-gray-700">
+          <p class="mb-6">
+            A Terapia de Nutrientes IV, como qualquer procedimento médico invasivo, não está isenta de riscos. Na Núcleo BP, acreditamos na transparência total sobre estes potenciais riscos, mesmo que raros, e implementamos rigorosos protocolos de segurança para minimizá-los ao máximo.
+          </p>
+
+          <div class="bg-gray-50 p-6 rounded-lg mb-6">
+            <h3 class="text-xl font-semibold text-primaria mb-3">Transparência sobre os Riscos</h3>
+            <p class="mb-3">
+              Mesmo sendo considerada segura quando realizada corretamente, a terapia IV pode apresentar riscos como:
+            </p>
+            <ul class="list-disc pl-6 mb-0">
+              <li class="mb-2"><strong>Infecção:</strong> Risco mínimo quando seguidos protocolos rígidos de assepsia</li>
+              <li class="mb-2"><strong>Flebite:</strong> Inflamação da veia utilizada para acesso</li>
+              <li class="mb-2"><strong>Reações alérgicas:</strong> Raras, mas possíveis a componentes específicos</li>
+              <li><strong>Sobrecarga hídrica ou eletrolítica:</strong> Prevenida através de formulações personalizadas e monitoramento</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg mb-6">
+            <h3 class="text-xl font-semibold text-primaria mb-3">Nossas Salvaguardas</h3>
+            <ol class="list-decimal pl-6 mb-0">
+              <li class="mb-2">
+                <strong>Supervisão médica integral:</strong> Todo protocolo é supervisionado pelo Dr. David Brito Pereira, garantindo a adequação e segurança do procedimento
+              </li>
+              <li class="mb-2">
+                <strong>Administração por profissional licenciado:</strong> Aplicação realizada exclusivamente por enfermeiros especializados
+              </li>
+              <li class="mb-2">
+                <strong>Ambiente estéril controlado:</strong> Procedimentos realizados em sala dedicada, seguindo os mais rigorosos protocolos de biossegurança
+              </li>
+              <li>
+                <strong>Avaliação médica completa:</strong> Identificação prévia de possíveis contraindicações, como doenças renais ou cardíacas que possam aumentar riscos
+              </li>
+            </ol>
+          </div>
+
+          <p>
+            Nossa prioridade é oferecer um serviço seguro, eficaz e verdadeiramente benéfico para cada paciente, sem comprometer jamais os princípios fundamentais da medicina baseada em evidências e da ética profissional.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-gray-50 text-center">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-primaria mb-6">Descubra se a Terapia de Nutrientes IV é Adequada para Você</h2>
+        <p class="text-lg text-gray-700 mb-8">
+          A terapia intravenosa não é indicada para todos os casos. Uma avaliação médica completa é essencial para determinar se esta abordagem beneficiará seu quadro específico e quais nutrientes seriam mais indicados para suas necessidades individuais.
+        </p>
+
+        <Botao
+          texto="Agende sua avaliação e descubra se a Terapia de Nutrientes IV é a indicação correta para você"
+          href="/contato"
+          variante="primario"
+          tamanho="grande"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Dados Estruturados Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "name": "Terapia de Nutrientes Intravenosa",
+      "procedureType": "Therapeutic procedure",
+      "description": "Administração direta de vitaminas, minerais, aminoácidos e outros nutrientes essenciais na corrente sanguínea para recuperação atlética, otimização da performance e correção de deficiências nutricionais.",
+      "medicineSystem": "Conventional medicine",
+      "relevantSpecialty": {
+        "@type": "MedicalSpecialty",
+        "name": "Medicina Esportiva e Nutrologia"
+      },
+      "indication": {
+        "@type": "MedicalIndication",
+        "name": "Recuperação muscular acelerada, optimização da performance e deficiências nutricionais"
+      },
+      "procedure": "Administração intravenosa controlada de nutrientes em ambiente clínico especializado",
+      "followup": "Avaliação periódica da resposta terapêutica",
+      "provider": {
+        "@type": "MedicalOrganization",
+        "name": "Núcleo BP",
+        "url": "https://nucleobp.com.br",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "São Paulo",
+          "addressCountry": "BR"
+        }
+      }
+    }
+  </script>
+
+  <!-- Dados estruturados para FAQ -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A Terapia de Nutrientes IV é dolorosa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A administração é realizada por profissionais altamente treinados, causando apenas um breve desconforto durante a inserção da agulha, semelhante a uma coleta de sangue. Durante a infusão, não há dor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo dura uma sessão de Terapia IV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O tempo varia conforme o protocolo específico, geralmente entre 30 e 60 minutos. Protocolos mais simples, como hidratação, são mais rápidos, enquanto infusões com múltiplos nutrientes podem levar mais tempo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Com que frequência posso realizar a Terapia IV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A frequência ideal é determinada individualmente após avaliação médica, considerando suas necessidades específicas, objetivos de tratamento e resposta clínica. Alguns protocolos podem ser semanais, quinzenais ou mensais, dependendo da indicação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Terapia IV substitui uma alimentação equilibrada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A Terapia IV é um complemento e nunca um substituto para uma alimentação saudável e equilibrada. Na Núcleo BP, sempre enfatizamos que a base da nutrição adequada vem de alimentos reais e hábitos saudáveis, sendo a terapia IV um recurso adicional para situações específicas."
+          }
+        }
+      ]
+    }
+  </script>
+</Layout>
